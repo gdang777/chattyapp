@@ -1,10 +1,7 @@
-h1 {
-  color: tomato;
-}
 body {
   background: white;
   color: black;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   margin: 70px 0;
 }
@@ -86,3 +83,5 @@ body {
   padding: 0 10px;
   text-decoration: none;
 }
+
+/*# sourceMappingURL=home.css.map */
