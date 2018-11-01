@@ -13,7 +13,8 @@ class App extends Component {
        type:"text",
        currentUser: data.currentUser.name,
        messages:[],
-       content: ''
+       content: '',
+       count: 0
       };
       this.textEnter = this.textEnter.bind(this);
       this.handleEditClick = this.handleEditClick.bind(this);
@@ -51,7 +52,11 @@ class App extends Component {
     });
 
   this.socket.addEventListener("message", (event) => {
+    console.log(event);
     const parsedObject = (JSON.parse(event.data));
+    if(parsedObject.type === 'connectedUsers'){
+      this.setState({count:parsedObject.count})
+    }
     console.log("Back from server", parsedObject);
     
     // if(parsedObject.type === 'incomingMessage' ) {
@@ -70,7 +75,8 @@ class App extends Component {
     } else {
       return (<div>
         <nav className="navbar">
-          <a href="/" className="navbar-brand">Chatty</a>
+          <a href="/" className="navbar-brand">Talky</a>
+          <a className="counter">{this.state.count} users online</a>
         </nav>
       <ChatBar handleEditClick={this.handleEditClick} textEnter={this.textEnter} chatUser={this.state.currentUser}/>
       <Message />
