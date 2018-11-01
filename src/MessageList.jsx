@@ -10,7 +10,7 @@ class MessageList extends Component {
         content={message.content}
         />)
     });
-  return (
+    return (
     <section className="Messages">
       {newMessages}
     </section>
