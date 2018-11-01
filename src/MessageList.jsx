@@ -6,6 +6,7 @@ class MessageList extends Component {
     const newMessages = this.props.userMessage.map(message => {
       return (<Message
         key={message.id}
+        type={message.type}
         user={message.username}
         content={message.content}
         />)

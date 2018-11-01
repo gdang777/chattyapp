@@ -54,13 +54,14 @@ class App extends Component {
     const parsedObject = (JSON.parse(event.data));
     console.log("Back from server", parsedObject);
     
-    if(parsedObject.type === 'incomingMessage' ) {
-      console.log("incoming message");
-    } else {
-      console.log("incoming notification");
-    }
-    const messages = this.state.messages.concat(parsedObject);
-    this.setState({messages: messages});
+    // if(parsedObject.type === 'incomingMessage' ) {
+      const messages = this.state.messages.concat(parsedObject);
+      this.setState({messages: messages});
+    // } else {
+    //   console.log(parsedObject.content);
+    //   this.setState({currentUser: parsedObject.username});
+    // }
+  
   });
 }
   render() {

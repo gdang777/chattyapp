@@ -17,10 +17,13 @@ class ChatBar extends Component {
     if (e.key === 'Enter') {
       this.props.textEnter(e.target.value, this.chatUser);
       e.target.value ='';
-      document.getElementById("uName").value = '';
+      // document.getElementById("uName").value = '';
     }
   }
   nameEdit(e) {
+    if (!e.target.value) {
+      return;
+    }
     this.chatUser = e.target.value;
   }
   render() {
