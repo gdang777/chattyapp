@@ -10,6 +10,7 @@ class App extends Component {
      super(props);
      this.state = {
        loading:true,
+       type:"text",
        currentUser: data.currentUser.name,
        messages:[],
        content: ''
@@ -18,25 +19,28 @@ class App extends Component {
       this.handleEditClick = this.handleEditClick.bind(this);
   }
   textEnter(content, chatUser){
+    console.log("text enter", content, chatUser);
     // this.state.currentUser = chatUser;
     this.setState({currentUser: chatUser});
     const incomingMessage = {
+      type:"postMessage",
       username: chatUser,
       content: content
     }
     this.socket.send(JSON.stringify(incomingMessage));
   }
   handleEditClick(name){
-    console.log("from handler",name);
-    // this.setState({currentUser: name});
-    this.state.currentUser = name;
-    // const incomingMessage = {
-    //   username: this.state.currentUser,
-    //   content: ""
-    // }
-    // this.socket.send(JSON.stringify(incomingMessage));
+    // console.log("from handler",name);
+    // this.state.currentUser = name;
+    const incomingMessage = {
+      type:"postNotification",
+      username: name,
+      content: `${this.state.currentUser} changed their name to ${name}` 
+    }
+    this.setState({currentUser: name});
+    this.socket.send(JSON.stringify(incomingMessage));
   }
-  
+
   componentDidMount() {    
     setTimeout(() => {
       this.setState({loading:false})
@@ -48,11 +52,17 @@ class App extends Component {
 
   this.socket.addEventListener("message", (event) => {
     const parsedObject = (JSON.parse(event.data));
+    console.log("Back from server", parsedObject);
+    
+    if(parsedObject.type === 'incomingMessage' ) {
+      console.log("incoming message");
+    } else {
+      console.log("incoming notification");
+    }
     const messages = this.state.messages.concat(parsedObject);
     this.setState({messages: messages});
   });
 }
-  
   render() {
     if(this.state.loading){
      return <h1>Loading.....</h1>

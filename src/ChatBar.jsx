@@ -9,7 +9,7 @@ class ChatBar extends Component {
   handlekeyPressforName(e){
     if (e.key === 'Enter') {
       console.log(this.chatUser);
-      this.props.handleEditClick(this.chatUser);
+      this.props.handleEditClick(e.target.value);
       e.target.value ='';
     }
   }
