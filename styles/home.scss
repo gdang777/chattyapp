@@ -1,5 +1,5 @@
 h1 {
-  color: tomato;
+  color: rgb(181, 122, 240);
 }
 body {
   background: white;
@@ -10,7 +10,7 @@ body {
 }
 
 .chatbar {
-  background: tomato;
+  background:rgb(181, 122, 240);
   border-top: 1px solid black;
   bottom: 0;
   display: flex;
@@ -45,7 +45,9 @@ body {
 
 .message.system {
   font-style: italic;
+  font-weight:bold;
   padding: 5px 20px;
+  color: lightcoral;
 }
 
 .message-content,
@@ -65,7 +67,7 @@ body {
 }
 
 .navbar {
-  background: tomato;
+  background:rgb(181, 122, 240);
   border-bottom: 1px solid black;
   height: 60px;
   left: 0;
@@ -85,8 +87,11 @@ body {
   line-height: 60px;
   padding: 0 10px;
   text-decoration: none;
+  font-style: italic;
 }
 .counter{
   float:right;
   margin-top: 20px;
+  font-weight: bold;
+  
 }

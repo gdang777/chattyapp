@@ -7,21 +7,19 @@ import data from '../data.json';
 
 class App extends Component {
   constructor(props){
-     super(props);
-     this.state = {
-       loading:true,
-       type:"text",
-       currentUser: data.currentUser.name,
-       messages:[],
-       content: '',
-       count: 0
-      };
-      this.textEnter = this.textEnter.bind(this);
-      this.handleEditClick = this.handleEditClick.bind(this);
+    super(props);
+    this.state = {
+      loading:true,
+      type:"text",
+      currentUser: data.currentUser.name,
+      messages:[],
+      content: '',
+      count: 0
+    };
+    this.textEnter = this.textEnter.bind(this);
+    this.handleEditClick = this.handleEditClick.bind(this);
   }
   textEnter(content, chatUser){
-    console.log("text enter", content, chatUser);
-    // this.state.currentUser = chatUser;
     this.setState({currentUser: chatUser});
     const incomingMessage = {
       type:"postMessage",
@@ -30,13 +28,11 @@ class App extends Component {
     }
     this.socket.send(JSON.stringify(incomingMessage));
   }
-  handleEditClick(name){
-    // console.log("from handler",name);
-    // this.state.currentUser = name;
+  handleEditClick(name) {
     const incomingMessage = {
       type:"postNotification",
       username: name,
-      content: `${this.state.currentUser} changed their name to ${name}` 
+      content: `${this.state.currentUser} changed name to ${name}` 
     }
     this.setState({currentUser: name});
     this.socket.send(JSON.stringify(incomingMessage));
@@ -52,21 +48,12 @@ class App extends Component {
     });
 
   this.socket.addEventListener("message", (event) => {
-    console.log(event);
     const parsedObject = (JSON.parse(event.data));
     if(parsedObject.type === 'connectedUsers'){
       this.setState({count:parsedObject.count})
-    }
-    console.log("Back from server", parsedObject);
-    
-    // if(parsedObject.type === 'incomingMessage' ) {
+    }    
       const messages = this.state.messages.concat(parsedObject);
       this.setState({messages: messages});
-    // } else {
-    //   console.log(parsedObject.content);
-    //   this.setState({currentUser: parsedObject.username});
-    // }
-  
   });
 }
   render() {

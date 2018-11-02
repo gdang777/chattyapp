@@ -4,7 +4,7 @@ import React, {Component} from 'react';
 class Message extends Component {
   render() {
     return (
-      <main className="messages">
+    <main className="messages">
       {(this.props.type === 'incomingMessage') ?
       <div className="message">
         <span className="message-username">{this.props.user}</span>
