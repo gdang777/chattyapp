@@ -63,7 +63,10 @@ class App extends Component {
       return (<div>
         <nav className="navbar">
           <a href="/" className="navbar-brand">Talky</a>
-          <a className="counter">{this.state.count} users online</a>
+          {(this.state.count > 1) ?
+          <a className="counter">{this.state.count} Users online</a> :
+          <a className="counter">{this.state.count} User online</a>
+          }
         </nav>
       <ChatBar handleEditClick={this.handleEditClick} textEnter={this.textEnter} chatUser={this.state.currentUser}/>
       <Message />
