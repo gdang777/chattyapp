@@ -13,7 +13,7 @@ A simple ReactJS real-time chat app built from a minimal react boilerplate to ga
 
 * Install all dependencies using the npm install command.
 * Run the 'client' server using the npm start command.
-* Also required dir chatty_server. cd into chatty_server and run the 'websocket server' using nodemon server.js command.
+* Also required dir chatty_server. CD into chatty_server and run the 'websocket server' using nodemon server.js command.
 * Open http://localhost:3000 on your browser.
 
 
