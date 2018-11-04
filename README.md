@@ -2,6 +2,7 @@ React Boilerplate
 =====================
 
 A minimal and light dev environment for ReactJS.
+https://gyazo.com/75c802b6c0220479b15639503dd1f5a6
 
 ### Usage
 
