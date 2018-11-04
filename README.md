@@ -1,4 +1,4 @@
-### Chatty App
+# Chatty App
 
 A simple ReactJS real-time chat app built from a minimal react boilerplate to gain experience with building web apps with React.
 
