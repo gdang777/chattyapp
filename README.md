@@ -8,6 +8,8 @@ A minimal and light dev environment for ReactJS.
 
 [![Image from Gyazo](https://i.gyazo.com/75c802b6c0220479b15639503dd1f5a6.gif)](https://gyazo.com/75c802b6c0220479b15639503dd1f5a6)
 
+[![Image from Gyazo](https://i.gyazo.com/b5d7b909f203b91f2de93f6fed35cc34.gif)](https://gyazo.com/b5d7b909f203b91f2de93f6fed35cc34)
+
 
 
 ### Usage
