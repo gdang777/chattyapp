@@ -27,9 +27,9 @@ npm run lint
 
 ### Dependencies
 
-Dependencies
-React: 15.4.2
-Webpack: 2.2.1
+* Dependencies
+* React: 15.4.2
+* Webpack: 2.2.1
 babel-loader: 6.3.1
 babel-core: 6.23.1
 babel-preset-es2015: 6.22.0
