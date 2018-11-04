@@ -64,7 +64,8 @@ class App extends Component {
         <nav className="navbar">
           <a href="/" className="navbar-brand">Talky</a>
           {(this.state.count > 1) ?
-          <a className="counter">{this.state.count} Users online</a> :
+          <a className="counter">{this.state.count} Users online</a> 
+          :
           <a className="counter">{this.state.count} User online</a>
           }
         </nav>
