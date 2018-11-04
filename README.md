@@ -3,7 +3,9 @@ React Boilerplate
 
 A minimal and light dev environment for ReactJS.
 
-![screen shot 2018-11-04 at 10 19 05 am](https://user-images.githubusercontent.com/38871325/47969242-7d950800-e029-11e8-9586-894ce8f59186.png)
+
+![screen shot 2018-11-04 at 12 04 14 pm](https://user-images.githubusercontent.com/38871325/47969263-cea4fc00-e029-11e8-9731-3bb0d6d0c5e7.png)
+
 
 
 ### Usage
